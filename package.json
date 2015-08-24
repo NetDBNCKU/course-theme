@@ -1,0 +1,23 @@
+{
+  "name": "course-theme",
+  "version": "0.0.0",
+  "description": "canner-can",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Canner-can/course-theme.git"
+  },
+  "keywords": [
+    "canner-can",
+    "activity"
+  ],
+  "author": "frankyang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Canner-can/course-theme/issues"
+  },
+  "homepage": "https://github.com/Canner-can/course-theme"
+}
