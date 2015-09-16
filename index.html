@@ -15,8 +15,8 @@
 			</header>
 			<nav id="nav">
 				<ul>
-					<li><a href="#about" class="active">About</a></li>
-					<li><a href="#i_can_do" class="active">I can do</a></li>
+					<li><a href="#about" class="nav_a">About</a></li>
+					<li><a href="#i_can_do" class="nav_a">I can do</a></li>
 				</ul>
 			</nav>
 		</section>
@@ -32,7 +32,7 @@
 								<h2>About</h2>
 							</header>
                             <p style="font-size: 1.5em;"><strong>Just an incredibly simple responsive site template</strong></p>
-                            <p style="margin-bottom: 2em; text-align: justify; text-justify:inter-ideograph;">Faucibus sed lobortis aliquam lorem blandit. Lorem eu nunc metus col. Commodo id in arcu ante lorem ipsum sed accumsan erat praesent faucibus commodo ac mi lacus. Adipiscing mi ac commodo. Vis aliquet tortor ultricies non ante erat nunc integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum.</p>
+                            <p style="margin-bottom: 2em; text-align: justify; text-justify:inter-ideograph;">Faucibus sed lobortis aliquamh lorem blandit. Lorem eu nunc metus col. Commodo id in arcu ante lorem ipsum sed accumsan erat praesent faucibus commodo ac mi lacus. Adipiscing mi ac commodo. Vis aliquet tortor ultricies non ante erat nunc integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum.Faucibus sed lobortis aliquamh lorem blandit. Lorem eu nunc metus col. Commodo id in arcu ante lorem ipsum sed accumsan erat praesent faucibus commodo ac mi lacus. Adipiscing mi ac commodo. Vis aliquet tortor ultricies non ante erat nunc integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum.</p>
                             <p style="font-size: 1.5em;"><strong>Just an incredibly simple responsive site template</strong></p>
                             <p style="margin-bottom: 2em; text-align: justify; text-justify:inter-ideograph;">Faucibus sed lobortis aliquam lorem blandit. Lorem eu nunc metus col. Commodo id in arcu ante lorem ipsum sed accumsan erat praesent faucibus commodo ac mi lacus. Adipiscing mi ac commodo. Vis aliquet tortor ultricies non ante erat nunc integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum.</p>
 						</div>
@@ -69,6 +69,49 @@
 		<script src="assets/js/util.js"></script>
 		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 		<script src="assets/js/main.js"></script>
+
+        <script type="text/javascript" charset="utf-8">
+            var now_url = document.URL;
+            var now_url_split = now_url.split('#');
+            if (now_url_split.length == 1 || now_url_split[now_url_split.length - 1] === "") {
+                $(".nav_a").each(function(index) {
+                    if (index === 0) {
+                        $(this).addClass('active');
+                    }
+                    else {
+                        $(this).removeClass('active')
+                               .addClass('scrollzer-locked');
+                    }
+                });
+            }
+            else {
+                $(".nav_a").each(function(index) {
+                    var now_slash = $(this).attr('href');
+                    if (now_slash == "#" + now_url_split[now_url_split.length - 1]) {
+                        $(this).addClass('active');
+                    }
+                    else {
+                        $(this).removeClass('active')
+                               .addClass('scrollzer-locked');
+                    }
+                });
+            }
+
+            $("a").click(function() {
+                var now_slash = $(this).attr('href');
+                if (now_slash === '#') {
+                    $(".nav_a").each(function(index) {
+                        if (index === 0) {
+                            $(this).addClass('active');
+                        }
+                        else {
+                            $(this).removeClass('active')
+                                .addClass('scrollzer-locked');
+                        }
+                    });
+                }
+            })
+        </script>
 
 	
 

@@ -23,7 +23,7 @@
 			<nav id="nav">
 				<ul>
 				{{#each section}}
-					<li><a href="#{{this.id}}" class="active">{{this.title}}</a></li>
+					<li><a href="#{{this.id}}" class="nav_a">{{this.title}}</a></li>
 				{{/each}}
 				</ul>
 			</nav>
@@ -68,6 +68,49 @@
 		<script src="assets/js/util.js"></script>
 		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 		<script src="assets/js/main.js"></script>
+
+        <script type="text/javascript" charset="utf-8">
+            var now_url = document.URL;
+            var now_url_split = now_url.split('#');
+            if (now_url_split.length == 1 || now_url_split[now_url_split.length - 1] === "") {
+                $(".nav_a").each(function(index) {
+                    if (index === 0) {
+                        $(this).addClass('active');
+                    }
+                    else {
+                        $(this).removeClass('active')
+                               .addClass('scrollzer-locked');
+                    }
+                });
+            }
+            else {
+                $(".nav_a").each(function(index) {
+                    var now_slash = $(this).attr('href');
+                    if (now_slash == "#" + now_url_split[now_url_split.length - 1]) {
+                        $(this).addClass('active');
+                    }
+                    else {
+                        $(this).removeClass('active')
+                               .addClass('scrollzer-locked');
+                    }
+                });
+            }
+
+            $("a").click(function() {
+                var now_slash = $(this).attr('href');
+                if (now_slash === '#') {
+                    $(".nav_a").each(function(index) {
+                        if (index === 0) {
+                            $(this).addClass('active');
+                        }
+                        else {
+                            $(this).removeClass('active')
+                                .addClass('scrollzer-locked');
+                        }
+                    });
+                }
+            })
+        </script>
 
 	</body>
 </html>
