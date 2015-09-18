@@ -32,5 +32,18 @@
         		]
         	}
         ]
+    },
+    "columns": {
+        "title": {
+            "~description": "網站名稱"
+        },
+        "section": {
+            "title": "每個section的標題",
+            "id": "每個section的id，不能跟其他section重複",
+            "content": {
+                "sub_title": "每個section的子標題",
+                "sub_detail": "每個section子標題的內容"
+            }
+        }
     }
 }
